@@ -25,7 +25,7 @@ public class ResourceCentre {
 
 		while (option != OPTION_QUIT) {
 //Ijas
-			ResourceCentre.menu();
+			ResourceCentre.menu();//
 			option = Helper.readInt("Enter an option > ");
 
 			if (option == OPTION_VIEW) {

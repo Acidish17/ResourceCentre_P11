@@ -166,16 +166,8 @@ public class ResourceCentre {
 		// write your code here
 		for (int i = 0; i < chromebookList.size(); i++) {
 
-			String assetTag = chromebookList.get(i).getAssetTag();
-			String description = chromebookList.get(i).getDescription();
-			boolean isAvailable = chromebookList.get(i).getIsAvailable();
-			String showAvailability = ResourceCentre.showAvailability(isAvailable);
-			String dueDate = chromebookList.get(i).getDueDate();
-			String os = chromebookList.get(i).getOs();
-			output += String.format("%-10s %-30s %-10s %-10s %-20s\n", assetTag,
-					description, 
-					showAvailability,
-					dueDate,os);
+		
+			output += String.format("%-10s %-30s %-10s %-10s %-20s\n",chromebookList.get(i).toString());
 		}
 		return output;
 	}

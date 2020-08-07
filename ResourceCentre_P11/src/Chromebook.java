@@ -13,7 +13,7 @@ public class Chromebook extends Item{
 	
 	public String toString(){
 		String output = super.toString();
-		return String.format("%-63s %-20d", output,getOs());
+		return String.format("%-10d", output, output,getOs());
 	}
 	public boolean toLoan(String tag, String dueDate) {
 		boolean output = super.toLoan(tag, dueDate);

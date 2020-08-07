@@ -14,8 +14,53 @@ public class Item {
 	public String toString() {
 		
 		// Write your codes here
-		return null;
+		return String.format("%-10s %-30s %-10s %-10s\n", getAssetTag(),
+				getDescription(),
+				showAvailability(getIsAvailable()),
+				getDueDate());
+		
 	}
+	
+	public static String showAvailability(boolean isAvailable) {
+		String avail;
+
+		if (isAvailable == true) {
+			avail = "Yes";
+		} else {
+			avail = "No";
+		}
+		return avail;
+	}
+	
+	public boolean toLoan(String tag, String dueDate) {
+		boolean isLoaned = false;
+		String assetTag = getAssetTag();
+		
+		boolean isAvailable = getIsAvailable();
+		if (tag.equalsIgnoreCase(assetTag) && isAvailable == true) {
+			
+			setIsAvailable(false);
+			setDueDate(dueDate);
+			
+			isLoaned = true;
+			
+		}
+		return isLoaned;
+	}
+	public boolean toReturn(String tag) {
+		boolean isReturned = false;
+		String assetTag = getAssetTag();
+		boolean isAvailable = getIsAvailable();
+		if (tag.equalsIgnoreCase(assetTag)
+				&& isAvailable == false) {
+			setIsAvailable(true);
+			setDueDate("");
+			isReturned = true;
+			
+		}
+		return isReturned;
+	}
+	
 	public String getAssetTag() {
 		return assetTag;
 	}

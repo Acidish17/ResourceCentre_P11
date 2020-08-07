@@ -16,6 +16,14 @@ public class Chromebook extends Item{
 		// Write your codes here
 		return output;
 	}
+	public boolean toLoan(String tag, String dueDate) {
+		boolean output = super.toLoan(tag, dueDate);
+		return output;
+	}
+	public boolean toReturn(String tag) {
+		boolean output = super.toReturn(tag);
+		return output;
+	}
 }
 
 

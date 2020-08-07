@@ -18,7 +18,6 @@ public class Item {
 				getDescription(),
 				showAvailability(getIsAvailable()),
 				getDueDate());
-		
 	}
 	
 	public static String showAvailability(boolean isAvailable) {
@@ -31,7 +30,6 @@ public class Item {
 		}
 		return avail;
 	}
-	
 	public boolean toLoan(String tag, String dueDate) {
 		boolean isLoaned = false;
 		String assetTag = getAssetTag();
